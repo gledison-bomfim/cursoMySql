@@ -19,10 +19,31 @@ nacionalidade varchar(20) default 'Brasil'
 describe pessoa;
 select * from pessoa;
 
-
 insert into pessoa 
-(nome, nascimento, sexo, peso, altura ) 
+(nome, nascimento, sexo, peso, altura) 
 values 
 ('Alex', '1998-10-05', 'M', '80.00', '1.75' ),
 ('Lucas', '1998-10-05', 'M', '80.00', '1.75' ),
 ('Victor', '1998-10-05', 'M', '80.00', '1.75' );
+
+
+alter table pessoa
+drop column profissao;
+
+alter table pessoa
+add column profissao varchar(10) after nome;
+
+alter table pessoa
+modify column profissao varchar(30);
+
+alter table pessoa
+change prof profissao  varchar (30);
+
+alter table pessoa
+drop column profissao;
+
+alter table pessoa
+rename to pessoas;
+
+alter table pessoas
+rename to pessoa;
