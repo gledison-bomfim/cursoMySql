@@ -17,5 +17,12 @@ nacionalidade varchar(20) default 'Brasil'
 ) default charset = utf8;
 
 describe pessoa;
+select * from pessoa;
 
-drop database cadastro;
+
+insert into pessoa 
+(nome, nascimento, sexo, peso, altura ) 
+values 
+('Alex', '1998-10-05', 'M', '80.00', '1.75' ),
+('Lucas', '1998-10-05', 'M', '80.00', '1.75' ),
+('Victor', '1998-10-05', 'M', '80.00', '1.75' );
