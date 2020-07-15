@@ -47,3 +47,18 @@ rename to pessoas;
 
 alter table pessoas
 rename to pessoa;
+
+
+create table if not exists cursos(
+nome varchar (30) not null unique,
+descrição text ,
+carga int unsigned,
+totaulas int,
+ano year default '2020'
+) default charset utf8;
+
+alter table cursos
+add column id_curso int  first;
+
+alter table cursos
+add primary key  (id_curso);
