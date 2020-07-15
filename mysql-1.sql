@@ -73,4 +73,9 @@ insert into cursos values
 update cursos
 set nome = 'HTML 5' WHERE id_curso = '1';
 update cursos
-set nome = 'teste 44', ano = '2010' WHERE id_curso = '1';
+set nome = 'tste 44', ano = '2010', carga= '40' WHERE id_curso = '6' limit 1;
+
+delete from cursos
+where id_curso = '4';
+
+truncate table cursos;
