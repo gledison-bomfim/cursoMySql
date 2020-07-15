@@ -62,3 +62,15 @@ add column id_curso int  first;
 
 alter table cursos
 add primary key  (id_curso);
+
+
+select * from cursos;
+desc cursos;
+
+insert into cursos values
+('6','Tesase', 'n sei', '10', '20', '2015');
+
+update cursos
+set nome = 'HTML 5' WHERE id_curso = '1';
+update cursos
+set nome = 'teste 44', ano = '2010' WHERE id_curso = '1';
