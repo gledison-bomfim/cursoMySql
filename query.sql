@@ -1,6 +1,5 @@
 use cadastro;
 
-
 select  * from gafanhotos;
 
 select * from cursos 
@@ -45,3 +44,23 @@ ORDER BY nome;
 
 SELECT  * FROM cursos 
 WHERE carga >35 and totaulas < 30;
+
+SELECT * FROM cursos
+WHERE carga > 35 AND totaulas < 30; 
+
+SELECT * FROM cursos
+WHERE nome = 'PHP';
+
+SELECT * FROM cursos
+WHERE nome LIKE '%P%';
+
+SELECT * FROM cursos
+WHERE nome LIKE '%P%';
+
+
+SELECT * FROM cursos
+WHERE nome LIKE '%Ph%p';
+
+
+SELECT * FROM cursos
+WHERE nome LIKE '%Ph%p_';
