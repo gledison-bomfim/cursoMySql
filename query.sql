@@ -64,3 +64,38 @@ WHERE nome LIKE '%Ph%p';
 
 SELECT * FROM cursos
 WHERE nome LIKE '%Ph%p_';
+
+SELECT * FROM cursos
+WHERE nome LIKE 'p__t%';
+
+SELECT * FROM  gafanhotos 
+WHERE nome like '%silva%';
+
+SELECT nacionalidade FROM gafanhotos;
+
+SELECT DISTINCT nacionalidade FROM gafanhotos;
+
+SELECT DISTINCT nacionalidade FROM gafanhotos
+order by nacionalidade;
+
+SELECT   DISTINCT carga  FROM cursos
+ORDER BY carga;
+
+SELECT  COUNT(*)   FROM cursos;
+
+SELECT  COUNT(*)   FROM cursos WHERE carga >30;
+
+SELECT * FROM cursos ORDER BY carga; 
+
+SELECT MAX(carga) FROM cursos;
+
+
+SELECT MAX(carga) FROM cursos WHERE ano = '2016';
+
+SELECT MAX(totaulas) FROM cursos WHERE ano = '2016';
+
+SELECT MIN(totaulas) FROM cursos WHERE ano = '2016';
+
+SELECT SUM(totaulas) FROM cursos WHERE ano = '2016';
+
+SELECT AVG(totaulas) FROM cursos;
