@@ -99,3 +99,34 @@ SELECT MIN(totaulas) FROM cursos WHERE ano = '2016';
 SELECT SUM(totaulas) FROM cursos WHERE ano = '2016';
 
 SELECT AVG(totaulas) FROM cursos;
+
+SELECT  carga FROM cursos
+GROUP BY carga;
+
+SELECT totaulas, COUNT(nome) FROM cursos
+GROUP BY totaulas
+ORDER BY totaulas;
+
+SELECT carga, COUNT(nome) FROM cursos
+GROUP BY carga;
+
+SELECT * FROM cursos WHERE totaulas = 12;
+
+
+SELECT carga, COUNT(nome) FROM cursos
+GROUP BY carga
+HAVING COUNT(nome) > 3 ;
+
+SELECT ano, COUNT(*) FROM cursos
+GROUP BY ano
+HAVING COUNT(ano) >= 5 
+order by count(*) desc;
+
+SELECT AVG(carga) FROM cursos;
+
+SELECT * FROM cursos 
+WHERE ANO > 2015
+GROUP BY carga
+HAVING carga > (SELECT AVG(carga) FROM cursos) 
+
+
