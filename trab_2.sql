@@ -10,22 +10,44 @@
 e o total de pessoas nascidas lá. Só nos interessam os países que tiveram mais de 3
 gafanhotos com essa nacionalidade. */
 
-/* 4-uma lista agrupada pela altura dos gafanhotos ,mostrando quantas pessoas 
+/* 4- Uma lista agrupada pela altura dos gafanhotos, mostrando quantas pessoas 
 pesam mais de 100kg e que estao acima da media da altura de todos os gafanhotoso.*/
 
 SELECT * FROM gafanhotos ;
 
-SELECT * FROM gafanhotos where profissao = 'programador';
 
 SELECT COUNT(*) quantidade, profissao FROM gafanhotos
 GROUP BY profissao;
 
-SELECT COUNT(*)quantidade, nascimento FROM gafanhotos
-GROUP BY nascimento
-HAVING COUNT (nascimento) > 2005-01-01
+
+
+SELECT  COUNT(nome) FROM gafanhotos WHERE nascimento > '2005-01-01'
 ORDER BY nascimento;
 
-SELECT COUNT(*) quantidade, nacionalidade FROM gafanhotos
+SELECT nome, nascimento, COUNT(nome) FROM gafanhotos 
+GROUP BY nascimento
+having nascimento > '2005-01-01'
+ORDER BY nascimento;
+
+
+
+SELECT COUNT(*) quantidade, nome, nacionalidade FROM gafanhotos WHERE nacionalidade != ('brasil')
 GROUP BY nacionalidade
-HAVING COUNT(quantidade) > 3
+HAVING COUNT(quantidade) > 3 
 ORDER BY nacionalidade;
+
+
+SELECT AVG(altura) FROM gafanhotos;
+
+SELECT  COUNT(*), altura, peso  FROM gafanhotos WHERE peso > 100.00
+GROUP BY altura
+HAVING altura > (SELECT AVG(altura) FROM gafanhotos)
+ORDER BY altura;
+
+SELECT nome, altura, peso FROM gafanhotos WHERE peso > 100.00
+GROUP BY altura
+HAVING altura > (SELECT AVG(altura) FROM gafanhotos)
+ORDER BY altura;
+
+SELECT COUNT(*) FROM gafanhotos WHERE peso > 100.00
+GROUP BY altura;
