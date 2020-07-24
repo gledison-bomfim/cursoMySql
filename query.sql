@@ -127,6 +127,35 @@ SELECT AVG(carga) FROM cursos;
 SELECT * FROM cursos 
 WHERE ANO > 2015
 GROUP BY carga
-HAVING carga > (SELECT AVG(carga) FROM cursos) 
+HAVING carga > (SELECT AVG(carga) FROM cursos); 
 
 
+ALTER TABLE gafanhotos add cursopreferido INT;
+
+ALTER TABLE gafanhotos ADD FOREIGN KEY (cursopreferido) REFERENCES cursos(idcurso);
+
+SELECT * FROM gafanhotos;
+
+SELECT * FROM cursos;
+
+
+UPDATE gafanhotos set cursopreferido = '6' WHERE id = '1';
+
+
+UPDATE gafanhotos SET cursopreferido = '22' WHERE (id = '2');
+UPDATE gafanhotos SET cursopreferido = '12' WHERE (id = '3');
+UPDATE gafanhotos SET cursopreferido = '7' WHERE (id = '4');
+UPDATE gafanhotos SET cursopreferido = '1' WHERE (id = '5');
+UPDATE gafanhotos SET cursopreferido = '8' WHERE (id = '6');
+UPDATE gafanhotos SET cursopreferido = '4' WHERE (id = '7');
+UPDATE gafanhotos SET cursopreferido = '5' WHERE (id = '8');
+UPDATE gafanhotos SET cursopreferido = '30' WHERE (id = '10');
+UPDATE gafanhotos SET cursopreferido = '3' WHERE (id = '9');
+UPDATE gafanhotos SET cursopreferido = '22' WHERE (id = '11');
+
+
+SELECT nome, cursopreferido FROM gafanhotos;
+
+SELECT nome, ano FROM cursos;
+
+SELECT gafanhotos.nome, gafanhotos.cursopreferido, cursos.nome, cursos.ano FROM gafanhotos  JOIN cursos; 
