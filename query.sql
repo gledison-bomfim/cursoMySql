@@ -2,6 +2,10 @@ use cadastro;
 
 select  * from gafanhotos;
 
+select  * from cursos;
+
+select  * from gafanhoto_assiste_curso;
+
 select * from cursos 
 order by nome;
 
@@ -158,4 +162,21 @@ SELECT nome, cursopreferido FROM gafanhotos;
 
 SELECT nome, ano FROM cursos;
 
-SELECT gafanhotos.nome, gafanhotos.cursopreferido, cursos.nome, cursos.ano FROM gafanhotos  JOIN cursos; 
+SELECT g.nome, g.cursopreferido, cursos.nome, cursos.ano FROM gafanhotos as g INNER JOIN cursos on cursos.idcurso = g.cursopreferido;
+
+SELECT g.nome, g.cursopreferido, cursos.nome, cursos.ano FROM gafanhotos as g  RIGHT  JOIN cursos on cursos.idcurso = g.cursopreferido; 
+
+SELECT g.nome, g.cursopreferido, cursos.nome, cursos.ano FROM gafanhotos as g  LEFT  JOIN cursos on cursos.idcurso = g.cursopreferido;
+
+CREATE TABLE gafanhoto_assiste_curso (
+    id int  primary key not null auto_increment, 
+    data date,
+    idgafanhoto int,
+    idcurso int,
+    FOREIGN KEY (idgafanhoto) REFERENCES gafanhotos(id),
+	FOREIGN KEY (idcurso) REFERENCES cursos(idcurso)
+) DEFAULT CHARSET = utf8;
+
+insert into gafanhoto_assiste_curso VALUES (
+    DEFAULT, '2014-03-01', '1','2'
+);

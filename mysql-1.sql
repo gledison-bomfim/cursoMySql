@@ -6,7 +6,7 @@ default collate utf8_general_ci
 use cadastro;
 
 create table pessoa (
-id_pessoa int primary key  auto_increment NOT NULL,
+id_pessoa int primary key  auto_increment ,
 nome varchar (30) NOT NULL,
 nascimento date NOT NULL,
 sexo enum ('M', 'F')NOT NULL,
