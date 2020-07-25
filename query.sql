@@ -180,3 +180,14 @@ CREATE TABLE gafanhoto_assiste_curso (
 insert into gafanhoto_assiste_curso VALUES (
     DEFAULT, '2014-03-01', '1','2'
 );
+
+select * from gafanhoto_assiste_curso;
+
+SELECT * FROM gafanhotos g join gafanhoto_assiste_curso  a on g.id = a.idgafanhoto;
+
+SELECT g.id, g.nome, a.idgafanhoto, idcurso FROM gafanhotos g join gafanhoto_assiste_curso  a on g.id = a.idgafanhoto;
+
+SELECT  g.nome, idcurso FROM gafanhotos g join gafanhoto_assiste_curso  a on g.id = a.idgafanhoto
+order by g.nome;
+
+select g.id, g.nome, c.nome, a.idcurso FROM gafanhotos g join gafanhoto_assiste_curso a on g.id = a.idgafanhoto join cursos c on a.idcurso = c.idcurso;
