@@ -79,3 +79,4 @@ delete from cursos
 where id_curso = '4';
 
 truncate table cursos;
+
