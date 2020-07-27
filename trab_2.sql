@@ -54,6 +54,3 @@ GROUP BY altura
 HAVING altura > (SELECT AVG(altura) FROM gafanhotos)
 ORDER BY altura;
 
-
-
-
